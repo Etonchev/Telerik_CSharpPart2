@@ -13,33 +13,32 @@ class MaximalSum
             Console.Write("arr[{0}]: ", i);
             arr[i] = Convert.ToInt32(Console.ReadLine());
         }
-
-        int maxTemp = int.MinValue;
-        int maxEnd = 0;
-        int start = 0;
-        int startTemp = 0;
-        int end = 0;
+        int maximumSequenceSum = int.MinValue;
+        int currentSequenceSum = 0;
+        int maximumSequenceStart = 0;
+        int currentSequenceStart = 0;
+        int maximumSequenceEnd = 0;
 
         for (int i = 0; i < arr.Length; i++)
         {
-            maxEnd += arr[i];
+            currentSequenceSum += arr[i];
 
-            if (arr[i] > maxEnd)
+            if (arr[i] > currentSequenceSum)
             {
-                maxEnd = arr[i];
-                startTemp = i;
+                currentSequenceSum = arr[i];
+                currentSequenceStart = i;
             }
-            if (maxEnd > maxTemp)
+            if (currentSequenceSum > maximumSequenceSum)
             {
-                maxTemp = maxEnd;
-                start = startTemp;
-                end = i;
+                maximumSequenceSum = currentSequenceSum;
+                maximumSequenceStart = currentSequenceStart;
+                maximumSequenceEnd = i;
             }
         }
 
-        Console.WriteLine("Maximal sum is: {0}", maxTemp);
+        Console.WriteLine("Maximal sum is: {0}", maximumSequenceSum);
 
-        for (int j = start; j <= end; j++)
+        for (int j = maximumSequenceStart; j <= maximumSequenceEnd; j++)
         {
             Console.Write(arr[j] + " ");
         }
