@@ -9,7 +9,7 @@ class MaximalIncreasingSequence
         int[] array = new int[n];
         for (int i = 0; i < n; i++)
         {
-            Console.Write("array[{i}] = ");
+            Console.Write("array[{0}] = ", i);
             array[i] = Convert.ToInt32(Console.ReadLine());
         }
 

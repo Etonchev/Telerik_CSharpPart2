@@ -8,14 +8,13 @@ class LargerThanNeighbours
         {
             throw new ArgumentOutOfRangeException();
         }
+
         if (array[index - 1] < array[index] && array[index + 1] < array[index])
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
+            
+	return false;
     }
     static void Main()
     {

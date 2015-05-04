@@ -4,12 +4,12 @@ class MaximalSequence
 {
     static void Main()
     {
-        Console.WriteLine("Arrays size: ");
+        Console.Write("Arrays size: ");
         int n = Convert.ToInt32(Console.ReadLine());
         int[] array = new int[n];
         for (int i = 0; i < n; i++)
         {
-            Console.Write("array[{i}] = ");
+            Console.Write("array[{0}] = ", i);
             array[i] = Convert.ToInt32(Console.ReadLine());
         }
 
@@ -25,9 +25,9 @@ class MaximalSequence
             }
             else
             {
-                bestElem = array[i - 1];
                 if (currentCount > bestCount)
                 {
+                    bestElem = array[i - 1];
                     bestCount = currentCount;
                 }
                 currentCount = 1;

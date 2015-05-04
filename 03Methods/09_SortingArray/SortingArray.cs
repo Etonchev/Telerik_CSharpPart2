@@ -8,6 +8,7 @@ class SortingArray
         {
             return Math.Max(array[startIndex], MaxInPortion(array, ++startIndex));
         }
+
         return Int32.MinValue;
     }
     public static void SortDescending(ref int[] array)
