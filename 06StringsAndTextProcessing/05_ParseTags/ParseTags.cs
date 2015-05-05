@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 class ParseTags
 {
@@ -6,31 +7,31 @@ class ParseTags
     {
         string text = "We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.";
         char[] arrayText = text.ToCharArray();
-        string search = String.Empty;
-        string result = String.Empty;
+        StringBuilder search = new StringBuilder();
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < arrayText.Length; i++)
         {
             if (arrayText[i] == '<')
             {
                 i++;
-                while(arrayText[i] != '>')
+                while (arrayText[i] != '>')
                 {
-                    search += arrayText[i];
+                    search.Append(arrayText[i]);
                     i++;
                 }
                 i++;
             }
-            if (search == "upcase")
+            if (search.ToString().Equals("upcase"))
             {
                 while (arrayText[i] != '<')
                 {
-                    result += Char.ToUpper(arrayText[i]);
+                    result.Append(Char.ToUpper(arrayText[i]));
                     i++;
                 }
-                search = String.Empty;
+                search.Clear();
                 i += 9;
             }
-            result += arrayText[i];
+            result.Append(arrayText[i]);
         }
 
         Console.WriteLine(result);

@@ -12,6 +12,7 @@ class CorrectBrackets
             {
                 bracketsCounter++;
             }
+
             if (item == ')')
             {
                 bracketsCounter--;
