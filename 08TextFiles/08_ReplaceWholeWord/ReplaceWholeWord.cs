@@ -13,7 +13,7 @@ class ReplaceSubstring
             string lines = reader.ReadLine();
             while (lines != null)
             {
-                linesList.Add(lines.Replace("start", "finish"));
+                linesList.Add(System.Text.RegularExpressions.Regex.Replace(lines, "\\bstart\\b", "finish"));
                 lines = reader.ReadLine();
             }
         }
